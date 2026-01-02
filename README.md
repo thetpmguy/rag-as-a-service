@@ -13,6 +13,14 @@ This project is intentionally simple, demo-friendly, and easy to run locally.
 
 ---
 
+| Component           | Responsibility                              | What This Service Uses                                                                                                             |
+| ------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Chunking**        | Preserve meaning and improve retrievability | Deterministic text chunking implemented in Python, splitting input documents into small, overlapping text segments before indexing |
+| **Embeddings**      | Represent semantic meaning numerically      | OpenAI embedding model to convert each text chunk and user query into high-dimensional vectors                                     |
+| **Vector Search**   | Retrieve the most relevant evidence         | In-memory vector similarity search using cosine similarity over stored embedding vectors                                           |
+| **LLM (Reasoning)** | Generate grounded, human-readable answers   | OpenAI chat completion model, constrained to answer strictly from retrieved context                                                |
+
+
 ## What this project demonstrates
 
 - Document ingestion and chunking
